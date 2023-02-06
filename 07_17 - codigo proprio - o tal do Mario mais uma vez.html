@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>")
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+    
+    var papo = parseInt(prompt("Numero"));
+
+    for(var linha = 1; linha <= papo; linha++) {
+        //mostra(linha);
+        //Um grande pensamento que eu tive enquanto escrevi esse código foi porque eu não entendia
+        //como que a primeira linha da pagina estava em branca e os "*" começavam na segunda
+        //basicamente a primeira linha era desconsiderada por que estava "coluna < linha"
+        //então lendo o código era basicamente "se coluna é MENOR que linha, faça o código"
+        //e como linha = 1 e coluna = 1, os dois eram iguais, logo o código era ignorado na primeira vez.
+        for(var coluna = 1; coluna <= linha; coluna++) {
+            document.write("#");
+        } 
+        document.write("<br>");
+        
+    }
+</script>

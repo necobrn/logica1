@@ -1,0 +1,70 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script> //aqui é o mundo java
+    function sorteia() {
+        return Math.round(Math.random() * 10);
+    }
+
+    //Função para gerar os numeros, (quantidade) é a quantidade de numeros (ou Arrays) gerados
+    function sorteiaNumeros(quantidade) {
+        
+        //obs: lembre que variavel declarada dentro de função é isolada da que está fora (var segredos)
+        var segredos = [];
+        var numero = 1; // para funcionar o loop
+
+        while(numero <= quantidade) {
+            var numeroAleatorio = sorteia();
+            
+            //if para impedir que retorne o numero "0"
+            if(numeroAleatorio !== 0 ) {
+                var achou = false;
+
+                //for loop:declara variavel, se posição for menor que o tamanho de "segredos", posição + 1
+                for(var posição = 0; posição < segredos.length; posição++) {
+                    //
+                    if(segredos[posição] == numeroAleatorio) {
+                        achou = true;
+                        break; 
+                    }
+                }
+
+                if(achou == false) {
+                    segredos.push(numeroAleatorio);
+                    numero++;
+                }
+            }
+        }
+
+        return segredos;
+    }
+    
+    var segredo = sorteiaNumeros(3);
+    var resposta = document.querySelector("input");
+    var achou = false;
+
+    console.log(segredo);
+
+    function verifica() {
+        
+
+        for(var posição = 0; posição < segredo.length; posição ++) {
+            if(resposta.value == segredo[posição]) {
+                alert("Você ACERTOU!");
+                achou = true;
+                break;
+            }
+        }
+
+        if(achou == false) {
+        alert("Você errou!");
+        }
+        resposta.value="";
+        resposta.focus();
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = verifica;
+</script>

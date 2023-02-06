@@ -1,0 +1,16 @@
+<script>
+    function pulaLinha(){
+        document.write("<br>");
+    }
+
+    function mostra(frase){
+        document.write(frase)
+        pulaLinha();
+    }
+
+    var idadeBrasil = 2022 - 1500;
+    var mediaFilhos = 28;
+    var geraçoes = Math.round(idadeBrasil/mediaFilhos);
+
+    mostra("<h1>Se passaram " + geraçoes + " gerações!</h1>");
+</script>

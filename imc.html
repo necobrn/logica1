@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>")
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calculaImc(pesoBase, alturaBase) {
+        return pesoBase / (alturaBase * alturaBase);
+        // mostra(" O imc de " + pessoa + " é: " + imc)
+    }
+
+    var nome = prompt("Informe o seu nome")
+    var peso = prompt(nome + ", informe seu peso");
+    var altura = prompt(nome + ", informe sua altura (Utilize ponto)");
+
+    var imcDois = calculaImc(peso, altura); // PRECISA DECLARAR UMA VARIAVEL PRA PODER IMPRIMIR NO mostra(); 
+
+    mostra("<h1><center>" + "O IMC calculado é: " + imcDois + "</h1></center>");
+    
+    if(imcDois < 18.5) {
+        mostra("<br> Você está abaixo do recomendado");
+    }
+
+    if(imcDois <= 90 && imcDois >= 5) {
+        mostra("<br> Só pra testar o &&");
+    }
+</script>

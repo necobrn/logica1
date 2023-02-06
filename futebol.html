@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>")
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+                //parseInt é uma função do JS pra converter string em integer
+    var vitorias = parseInt(prompt("Entre com o número de vitórias")); 
+    var empates = parseInt(prompt("Entre com o número de empates"));
+
+    var pontos = (vitorias * 3) + empates;
+
+    mostra("Os pontos do seu time é " + pontos);
+
+    if (pontos > 28) {
+        mostra("Ano passado seu time fez " + 28 + "<br>Logo, seu time está melhor que o ano passado");
+    }
+
+    if (pontos < 28) {
+        mostra("Seu time está pior que o ano passado");
+    }
+
+    if (pontos == 28) {
+        mostra("Seu time está igual o ano passado");
+    }
+
+    mostra("<h3>FIM</h3>");
+
+</script>

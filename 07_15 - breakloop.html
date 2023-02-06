@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>")
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var login = 123;
+    var tentativas = 3;
+    var tentativaAtual = 1; 
+
+    while(tentativaAtual <= tentativas) {
+        var usuario = parseInt(prompt("Qual o seu login?"))
+
+        if(usuario == login) {
+            mostra("Bem vindo!");
+            break; //uma alternativa é simplesmente aumentar a tentativaAtual para maior ou igual que tentativas, assim o loop pararia.
+        
+        } else {
+            mostra("Senha incorreta");
+        }
+        tentativaAtual++
+    }
+
+    mostra("Fim;");
+
+</script>
